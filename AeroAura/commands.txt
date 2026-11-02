@@ -1,0 +1,5 @@
+Frontend:
+cd AeroAura/frontend
+
+Backend:
+cd AeroAura/backend
