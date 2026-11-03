@@ -1,5 +1,17 @@
 Frontend:
 cd AeroAura/frontend
+flutter pub get
+flutter run -d web-server --web-port 8080 --web-hostname 0.0.0.0
 
 Backend:
 cd AeroAura/backend
+npm install
+# make sure .env has PORT=5000, MONGO_URI=<your Atlas URI>, WEATHER_API_KEY=<key>
+npm run dev        # or: npm start
+
+To Install Flutter(Only Once):
+git clone https://github.com/flutter/flutter.git -b stable $HOME/flutter
+export PATH="$HOME/flutter/bin:$PATH"
+flutter config --enable-web
+flutter doctor
+
