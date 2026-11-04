@@ -1,10 +1,9 @@
 class AppConstants {
-  // ⚠️ REPLACE WITH YOUR OPENWEATHERMAP API KEY
-  static const String weatherApiKey = 'your_openweathermap_key';
-  static const String backendBaseUrl = 'https://<codespace>-5000.app.github.dev/api';
+  static const String weatherApiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+  static const String weatherBaseUrl = 'https://api.openweathermap.org/data/2.5';
 
-  // ⚠️ REPLACE WITH YOUR BACKEND URL (use 10.0.2.2 for Android emulator)
-  static const String backendBaseUrl = 'http://10.0.2.2:5000/api';
+  // Your forwarded port 5000 URL from the Ports tab, keep the /api at the end
+  static const String backendBaseUrl = 'https://YOUR-CODESPACE-5000.app.github.dev/api';
 
   // Hydration goal (ml)
   static const double defaultHydrationGoal = 2500;

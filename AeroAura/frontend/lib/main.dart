@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -8,7 +9,9 @@ import 'screens/splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await NotificationService.initialize();
+  if (!kIsWeb) {
+    await NotificationService.initialize();
+  }
   SystemChrome.setPreferredOrientations(
     [DeviceOrientation.portraitUp],
   );
@@ -32,7 +35,6 @@ class AeroAuraApp extends StatelessWidget {
       child: MaterialApp(
         title: 'AeroAura',
         debugShowCheckedModeBanner: false,
-        // Disable ink sparkle shader to fix Application Control block
         theme: ThemeData(
           useMaterial3: true,
           splashFactory: NoSplash.splashFactory,

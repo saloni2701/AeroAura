@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class NotificationService {
@@ -5,6 +6,7 @@ class NotificationService {
       FlutterLocalNotificationsPlugin();
 
   static Future<void> initialize() async {
+    if (kIsWeb) return;
     const androidSettings =
         AndroidInitializationSettings('@mipmap/ic_launcher');
     const initSettings = InitializationSettings(android: androidSettings);
@@ -12,6 +14,7 @@ class NotificationService {
   }
 
   static Future<void> showRainAlert(String message) async {
+    if (kIsWeb) return;
     const androidDetails = AndroidNotificationDetails(
       'rain_alert_channel',
       'Rain Alerts',
@@ -25,6 +28,7 @@ class NotificationService {
   }
 
   static Future<void> showHeatwaveAlert(String message) async {
+    if (kIsWeb) return;
     const androidDetails = AndroidNotificationDetails(
       'heatwave_channel',
       'Heatwave Alerts',
@@ -38,6 +42,7 @@ class NotificationService {
   }
 
   static Future<void> showHydrationReminder() async {
+    if (kIsWeb) return;
     const androidDetails = AndroidNotificationDetails(
       'hydration_channel',
       'Hydration Reminders',
